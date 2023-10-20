@@ -1,0 +1,23 @@
+<!-- <button *ngIf="!loggedIn" (click)="signInWithFB()" >Login With FB</button> -->
+
+<div class="col-md-6 offset-md-3 mt-5 text-center">
+    <div class="card">
+        <h4 class="card-header">Login for facebook</h4>
+        <div class="card-body">
+            <button class="btn btn-facebook" *ngIf="!loggedIn" (click)="signInWithFB()" >
+                <i class="fa fa-facebook me-1"></i>
+               Facebook
+            </button>
+        </div>
+
+        <div *ngIf="loggedIn">
+            <img src="{{ user.response.picture.data.url }}">
+            <div>
+              <h4>{{ user.name }}</h4>
+              <p>{{ user.email }}</p>
+            </div>
+            </div>
+    </div>
+</div>
+
+<!-- //npm i @abacritt/angularx-social-login -->
